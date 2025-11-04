@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# MosaicGenerator working directories and outputs
+frames/
+source/
+output.png
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.avi
+*.mov
+
+# Keep example files if they exist
+!examples/
+!examples/**
+
+# OS
+.DS_Store
+Thumbs.db
