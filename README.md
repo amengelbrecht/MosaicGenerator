@@ -59,7 +59,7 @@ mkdir source
 Extract frames from your videos. The `--skip-frames` parameter lets you control density (higher = fewer frames, faster processing):
 
 ```bash
-# Extract every 30th frame as 256x256 tiles
+# Extract every 30th frame as 128x128 tiles
 python mosaic_generator.py extract --skip-frames 30
 ```
 
@@ -91,7 +91,7 @@ Options:
 - `--skip-frames N` - Extract every Nth frame (default: 1)
   - Use higher values (30-60) for faster processing and smaller libraries
   - Use lower values (1-10) for more variety in your tile library
-- `--image-size SIZE` - Size of output square tiles in pixels (default: 256)
+- `--image-size SIZE` - Size of output square tiles in pixels (default: 128)
 - `--source-dir DIR` - Directory with source videos (default: ./source)
 
 Examples:
@@ -153,7 +153,7 @@ You can also import and use MosaicGenerator functions in your Python code:
 from mosaic_generator import extract_frames, process_images, generate_image
 
 # Step 1: Extract frames from videos
-extract_frames(skip_frames=30, image_size=256, source_dir='./my_videos')
+extract_frames(skip_frames=30, image_size=128, source_dir='./my_videos')
 
 # Step 2: Analyze frame colors
 frame_colors = process_images()
@@ -199,7 +199,7 @@ python mosaic_generator.py generate portrait.jpg --output portrait_mosaic.png
 # Output size: 102400x76800 pixels
 ```
 
-**Note:** The output image will be much larger than your input! If your target is 400x300 pixels and each frame is 256x256, the output will be 102,400x76,800 pixels. Consider using a small target image or reducing `--image-size` during extraction.
+**Note:** The output image will be much larger than your input! If your target is 400x300 pixels and each frame is 128x128, the output will be 51,200x38,400 pixels. Consider using a small target image or reducing `--image-size` during extraction.
 
 ## Tips & Best Practices
 
@@ -231,7 +231,7 @@ python mosaic_generator.py generate portrait.jpg --output portrait_mosaic.png
 Output Width = Target Width × Frame Tile Size
 Output Height = Target Height × Frame Tile Size
 
-Example: 200×150 target with 256px tiles = 51,200×38,400 px output (≈2GB)
+Example: 200×150 target with 128px tiles = 25,600×19,200 px output (≈500MB)
 ```
 
 ## Troubleshooting
