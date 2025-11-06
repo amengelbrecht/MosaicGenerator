@@ -20,7 +20,7 @@ from tqdm import tqdm
 
 def extract_frames(
     skip_frames: int = 1,
-    image_size: int = 256,
+    image_size: int = 128,
     source_dir: str = './source'
 ) -> None:
     """
@@ -31,7 +31,7 @@ def extract_frames(
 
     Args:
         skip_frames: Number of frames to skip between extractions (default: 1)
-        image_size: Size of output square images in pixels (default: 256)
+        image_size: Size of output square images in pixels (default: 128)
         source_dir: Directory containing source video files (default: './source')
 
     Raises:
@@ -327,8 +327,8 @@ Examples:
     extract_parser.add_argument(
         '--image-size',
         type=int,
-        default=256,
-        help='Size of output square images in pixels (default: 256)'
+        default=128,
+        help='Size of output square images in pixels (default: 128)'
     )
     extract_parser.add_argument(
         '--source-dir',
